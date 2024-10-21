@@ -5,27 +5,25 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+
+import java.time.LocalDateTime;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Advisor {
-
+public class ClientPortfolio {
     @Id
-    @GeneratedValue()
-    private long advisorId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(nullable = false)
-    private String firstName;
+    private Long clientId;
 
     @Column(nullable = false)
-    private String lastName;
+    private Double totalValue;
 
     @Column(nullable = false)
-    private String address;
+    private LocalDateTime lastUpdated;
 
-    @Column(nullable = false)
-    private String phone;
 
-    @Column(nullable = false)
-    private String email;
 }

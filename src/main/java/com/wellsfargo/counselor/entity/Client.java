@@ -3,29 +3,30 @@ package com.wellsfargo.counselor.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Advisor {
 
+public class Client {
     @Id
-    @GeneratedValue()
-    private long advisorId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(nullable = false)
-    private String firstName;
+    private String name;
 
     @Column(nullable = false)
-    private String lastName;
-
-    @Column(nullable = false)
-    private String address;
+    private String email;
 
     @Column(nullable = false)
     private String phone;
 
     @Column(nullable = false)
-    private String email;
+    private Long advisorId;
+
+
 }

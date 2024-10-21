@@ -5,27 +5,29 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Advisor {
-
+public class Security {
     @Id
-    @GeneratedValue()
-    private long advisorId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(nullable = false)
-    private String firstName;
+    private String name;
 
     @Column(nullable = false)
-    private String lastName;
+    private String category;
 
     @Column(nullable = false)
-    private String address;
+    private LocalDate purchaseDate;
 
     @Column(nullable = false)
-    private String phone;
+    private Double purchasePrice;
 
     @Column(nullable = false)
-    private String email;
+    private Integer quantity;
+
 }
